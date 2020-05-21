@@ -16,8 +16,8 @@ before_script:
 script:
   - docker --version # print the version for logging
   - docker build -t simple-node .
-  - docker tag simple-node YOUR_DOCKER_HUB/simple-node:latest
+  - docker tag simple-node-travis emileasow/simple-node-travis:latest
 
 after_success:
   - echo "$DOCKER_PASS" | docker login -u "$DOCKER_USER" --password-stdin
-  - docker push YOUR_DOCKER_HUB/simple-node-travis
+  - docker push emileasow/simple-node-travis
