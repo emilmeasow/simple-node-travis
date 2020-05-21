@@ -7,6 +7,9 @@ async function main() {
     console.log('Containers rule!');
     await sleep(5000);
   }
+
+  const favoriteFood = process.env.FAVORITE_FOOD;
+  console.log(`My favorite food is ${favoriteFood}`);
 }
 
 main();
